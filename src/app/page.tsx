@@ -10,7 +10,7 @@ export default function Home() {
         </div>
         <div className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
-            Under construction
+            Under Construction
           </h1>
           <p className="max-w-sm text-lg text-zinc-600 dark:text-zinc-400">
             We’re working on something new. Check back soon.
