@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-amber-50 px-6 dark:bg-zinc-950">
@@ -6,7 +8,7 @@ export default function Home() {
           className="text-6xl font-bold tracking-tighter text-amber-600 dark:text-amber-500"
           aria-hidden
         >
-          🚧
+          <Image src="/logo-white.png" alt="Construction" width={100} height={100} />
         </div>
         <div className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
@@ -16,7 +18,7 @@ export default function Home() {
             We’re working on something new. Check back soon.
           </p>
         </div>
-        <div className="h-px w-16 bg-amber-300 dark:bg-amber-600/60" />
+        <div className="h-px w-16 bg-black dark:bg-white" />
       </div>
     </div>
   );
