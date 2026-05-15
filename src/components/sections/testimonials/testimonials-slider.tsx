@@ -26,7 +26,7 @@ export const TestimonialsSlider = ({ items }: TestimonialsSliderProps) => {
       slidesPerView={1.1}
       spaceBetween={16}
       loop
-      autoplay={{ delay: 5000, disableOnInteraction: false }}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
       breakpoints={{
         640: { slidesPerView: 2.1, spaceBetween: 20 },
         1024: { slidesPerView: 3.1, spaceBetween: 24 },
