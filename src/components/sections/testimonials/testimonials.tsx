@@ -14,7 +14,7 @@ export async function Testimonials() {
   }));
 
   return (
-    <section className="mb-10 lg:mb-[132px] overflow-hidden">
+    <section className="mb-10 lg:mb-[134px] overflow-hidden">
       <div className="mx-auto max-w-[1440px] py-[20px] lg:py-20">
         <div className="px-6 lg:px-20">
           <h2 className="text-left text-xl font-bold uppercase tracking-wide text-text lg:text-center lg:text-[32px]">
