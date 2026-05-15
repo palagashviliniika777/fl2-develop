@@ -1,0 +1,57 @@
+{
+  "brand": "FL2",
+  "nav": {
+    "home": "მთავარი",
+    "services": "მომსახურება",
+    "about": "ჩვენ შესახებ",
+    "contact": "კონტაქტი",
+    "blog": "ბლოგი",
+    "calculator": "კალკულატორი"
+  },
+  "services": {
+    "stretchedFloor": "მოჭიმული იატაკი",
+    "selfLevelingFloor": "თვითსწორებადი იატაკი",
+    "epoxyFloor": "ეპოქსიდური იატაკი",
+    "vinylCovering": "ვინილის საფარი",
+    "terrazzoFloor": "ტერაცოს იატაკი",
+    "softFloorAndCarpet": "რბილი იატაკი და ხალიჩა"
+  },
+  "serviceDescriptions": {
+    "stretchedFloor": "თანამედროვე სივრცეებისთვის უნაკერო მოჭიმული იატაკი",
+    "selfLevelingFloor": "სრულყოფილად გლუვი, თვითსწორებადი იატაკის გადაწყვეტა",
+    "epoxyFloor": "გამძლე, მაღალი ბზინვარების ეპოქსიდური საფარი",
+    "vinylCovering": "სტილური და წყალგამძლე ვინილის იატაკის საფარი",
+    "terrazzoFloor": "კლასიკური ტერაცოს იატაკი თანამედროვე დამუშავებით",
+    "softFloorAndCarpet": "კომფორტული რბილი იატაკი და პრემიუმ ხალიჩები"
+  },
+  "actions": {
+    "getQuote": "ფასის გაგება",
+    "learnMore": "გაიგე მეტი",
+    "submit": "გაგზავნა",
+    "loading": "იტვირთება…"
+  },
+  "footer": {
+    "description": "პროფესიული იატაკის გადაწყვეტები საცხოვრებელი და კომერციული სივრცეებისთვის. ხარისხიანი მასალები, ექსპერტული მონტაჟი და სანდო მომსახურება.",
+    "quickNav": "სწრაფი ნავიგაცია",
+    "social": "სოც. ქსელები",
+    "phone": "+995 579 98 98 98",
+    "email": "info@fl2.ge",
+    "rights": "ყველა უფლება დაცულია.",
+    "socialLinks": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "linkedin": "Linked in",
+      "youtube": "Youtube",
+      "tiktok": "Tik Tok"
+    }
+  },
+  "language": {
+    "en": "English",
+    "ka": "ქართული"
+  },
+  "toast": {
+    "emailCopied": "ელფოსტა დაკოპირდა",
+    "copied": "კოპირებულია ბუფერში",
+    "copyFailed": "კოპირება ვერ მოხერხდა"
+  }
+}

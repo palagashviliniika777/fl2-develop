@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "title": "Calculator — FL2",
+    "description": "Estimate the cost of your project."
+  },
+  "hero": {
+    "title": "Project calculator",
+    "description": "Answer a few questions to get an estimate."
+  },
+  "form": {
+    "submit": "Calculate",
+    "reset": "Reset"
+  },
+  "result": {
+    "title": "Estimated cost"
+  }
+}

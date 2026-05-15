@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "სერვისი — FL2",
+    "description": "სერვისის დეტალები.",
+    "pageTitle": "{name} — FL2"
+  },
+  "details": {
+    "overview": "მიმოხილვა",
+    "process": "ჩვენი პროცესი",
+    "pricing": "ფასი",
+    "ctaTitle": "მზად ხარ დასაწყებად?",
+    "ctaDescription": "მოგვწერე შენი პროექტის შესახებ."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "brand": "FL2",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "calculator": "Calculator"
+  },
+  "services": {
+    "stretchedFloor": "Stretched floor",
+    "selfLevelingFloor": "Self-leveling floor",
+    "epoxyFloor": "Epoxy floor",
+    "vinylCovering": "Vinyl covering",
+    "terrazzoFloor": "Terrazzo floor",
+    "softFloorAndCarpet": "Soft floor & carpet"
+  },
+  "serviceDescriptions": {
+    "stretchedFloor": "Seamless stretch ceiling-style flooring for modern spaces",
+    "selfLevelingFloor": "Perfectly smooth, self-leveling floor solutions",
+    "epoxyFloor": "Durable, high-gloss epoxy coatings for any surface",
+    "vinylCovering": "Stylish and water-resistant vinyl floor coverings",
+    "terrazzoFloor": "Classic terrazzo flooring with a contemporary finish",
+    "softFloorAndCarpet": "Comfortable soft flooring and premium carpets"
+  },
+  "actions": {
+    "getQuote": "Get a quote",
+    "learnMore": "Learn more",
+    "submit": "Submit",
+    "loading": "Loading…"
+  },
+  "footer": {
+    "description": "Professional flooring solutions for residential and commercial spaces. Quality materials, expert installation, and reliable service.",
+    "quickNav": "Quick navigation",
+    "social": "Social networks",
+    "phone": "+995 579 98 98 98",
+    "email": "info@fl2.ge",
+    "rights": "All rights reserved.",
+    "socialLinks": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "linkedin": "Linked in",
+      "youtube": "Youtube",
+      "tiktok": "Tik Tok"
+    }
+  },
+  "language": {
+    "en": "English",
+    "ka": "ქართული"
+  },
+  "toast": {
+    "emailCopied": "Email copied to clipboard",
+    "copied": "Copied to clipboard",
+    "copyFailed": "Could not copy"
+  }
+}

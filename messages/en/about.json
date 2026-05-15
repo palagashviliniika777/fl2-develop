@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "About — FL2",
+    "description": "Learn more about FL2."
+  },
+  "hero": {
+    "title": "About us",
+    "description": "Who we are and what we believe in."
+  },
+  "story": {
+    "title": "Our story"
+  },
+  "values": {
+    "title": "Our values"
+  }
+}

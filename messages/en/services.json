@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "Service — FL2",
+    "description": "Service details.",
+    "pageTitle": "{name} — FL2"
+  },
+  "details": {
+    "overview": "Overview",
+    "process": "Our process",
+    "pricing": "Pricing",
+    "ctaTitle": "Ready to start?",
+    "ctaDescription": "Tell us about your project."
+  }
+}

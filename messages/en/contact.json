@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "Contact — FL2",
+    "description": "Get in touch with us."
+  },
+  "hero": {
+    "title": "Contact us",
+    "description": "We’d love to hear from you."
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send message",
+    "success": "Thanks — we’ll be in touch.",
+    "error": "Something went wrong. Please try again."
+  },
+  "info": {
+    "phone": "Phone",
+    "address": "Address",
+    "email": "Email"
+  }
+}
