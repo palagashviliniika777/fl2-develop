@@ -8,6 +8,7 @@ export default createMiddleware(routing);
 export const config = {
   matcher: [
     "/",
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    // Exclude `health` so probes get 200 without locale redirect (avoids some LB/CDN 503s).
+    "/((?!api|_next|_vercel|health|.*\\..*).*)",
   ],
 };
