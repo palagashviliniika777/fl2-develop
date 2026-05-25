@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ContactForm } from "@/components/sections/contact";
 import { ServiceDetailBlock } from "@/components/sections/services/service-detail-block";
 import {
   SERVICE_ITEMS,
@@ -57,9 +58,8 @@ export default async function ServiceDetailsPage({
 
   const tServices = await getTranslations("common.services");
   const tDetailDesc = await getTranslations("services.details.descriptions");
-
   return (
-    <main className="pt-[90px] flex flex-col gap-[100px] my-20">
+    <main className="pt-[90px] flex flex-col md:gap-[100px] gap-10 my-20">
       <ServiceDetailBlock
         title={tServices(service.key)}
         description={tDetailDesc(service.key)}
@@ -75,6 +75,7 @@ export default async function ServiceDetailsPage({
         description={tDetailDesc(service.key)}
         direction="left"
       />
+      <ContactForm serviceName={tServices(service.key)} />
     </main>
   );
 }

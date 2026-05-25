@@ -7,13 +7,32 @@
     "title": "Contact us",
     "description": "We’d love to hear from you."
   },
+  "section": {
+    "label": "Contact",
+    "title": "Turn your idea into reality",
+    "description": "We are ready to transform your vision into residential, commercial, or industrial space. Trust our professionals from concept to project completion.",
+    "formTitle": "Send us a message"
+  },
   "form": {
-    "name": "Name",
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Your name",
+    "phone": "Phone number",
+    "phonePlaceholder": "+995 …",
     "email": "Email",
-    "message": "Message",
-    "submit": "Send message",
+    "emailPlaceholder": "you@example.com",
+    "message": "Your message",
+    "messagePlaceholder": "Tell us the details…",
+    "submit": "Send",
+    "submitting": "Sending…",
     "success": "Thanks — we’ll be in touch.",
-    "error": "Something went wrong. Please try again."
+    "error": "Something went wrong. Please try again.",
+    "errorNotConfigured": "Contact form is not configured yet. Please try again later.",
+    "errors": {
+      "fullName": "Enter your full name (at least 2 characters).",
+      "phone": "Enter a valid phone number.",
+      "email": "Enter a valid email address.",
+      "message": "Message must be at least 10 characters."
+    }
   },
   "info": {
     "phone": "Phone",

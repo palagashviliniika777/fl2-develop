@@ -1,3 +1,4 @@
+import { ContactForm } from "@/components/sections/contact";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -18,14 +19,10 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("contact.hero");
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-24">
-      <h1 className="text-4xl font-semibold tracking-tight">{t("title")}</h1>
-      <p className="mt-4 max-w-prose text-lg text-zinc-600">
-        {t("description")}
-      </p>
+    <main>
+      <ContactForm className="my-24 md:my-20"/>
     </main>
   );
 }
