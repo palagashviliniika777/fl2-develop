@@ -22,7 +22,7 @@ export default async function ContactPage({
 
   return (
     <main>
-      <ContactForm className="my-24 md:my-20"/>
+      <ContactForm className="my-24 md:my-20" hasLabel={false}/>
     </main>
   );
 }

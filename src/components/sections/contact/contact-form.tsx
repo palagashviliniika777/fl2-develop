@@ -12,11 +12,13 @@ import { useContactForm } from "./use-contact-form";
 type ServiceContactFormProps = {
   serviceName?: string;
   className?: string;
+  hasLabel?: boolean;
 };
 
 export function ContactForm({
   serviceName,
   className,
+  hasLabel = true,
 }: ServiceContactFormProps) {
   const tSection = useTranslations("contact.section");
   const t = useTranslations("contact.form");
@@ -26,10 +28,12 @@ export function ContactForm({
     <section className={cn("bg-light", className)}>
       <div className="mx-auto max-w-[1440px] px-6 py-[20px] lg:px-20 lg:py-8">
         <header className="mx-auto flex max-w-3xl flex-col items-center text-center">
+          {hasLabel && (
           <div className="flex items-center gap-2.5">
-            <span className="size-2.5 shrink-0 bg-text" aria-hidden />
-            <span className="text-sm text-text">{tSection("label")}</span>
-          </div>
+              <span className="size-2.5 shrink-0 bg-text" aria-hidden />
+              <span className="text-sm text-text">{tSection("label")}</span>
+            </div>
+          )}
           <h2 className="mt-4 text-xl font-bold uppercase tracking-wide text-text lg:text-[32px] lg:leading-tight">
             {tSection("title")}
           </h2>
