@@ -6,11 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import type { SwiperClass } from "swiper/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-import { ABOUT_SLIDER_IMAGES } from "@/shared/constants";
 import "swiper/css";
 
-export function AboutHeroSlider() {
+type AboutHeroSliderProps = {
+  images: string[];
+};
+
+export function AboutHeroSlider({ images }: AboutHeroSliderProps) {
   const swiperRef = useRef<SwiperClass | null>(null);
 
   return (
@@ -24,7 +26,7 @@ export function AboutHeroSlider() {
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         className="!h-full !w-full"
       >
-        {ABOUT_SLIDER_IMAGES.map((src, i) => (
+        {images.map((src, i) => (
           <SwiperSlide key={i} className="!h-full">
             <div className="relative h-full w-full">
               <Image

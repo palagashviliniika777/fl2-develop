@@ -8,7 +8,6 @@ import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import {
   NAV_LINKS,
-  SERVICE_ITEMS,
   LOCALE_LABELS,
   LOCALE_FLAGS,
   TRANSPARENT_NAV_ROUTES,
@@ -22,8 +21,13 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import type { ServiceNavItem } from "@/shared/types/service";
 
-export function Navigation() {
+type NavigationProps = {
+  services: ServiceNavItem[];
+};
+
+export function Navigation({ services }: NavigationProps) {
   const t = useTranslations("common");
   const pathname = usePathname();
   const router = useRouter();
@@ -103,7 +107,7 @@ export function Navigation() {
             {NAV_LINKS.map(({ key, href }) => {
               if (key === "about") {
                 return (
-                  <ServicesDropdown key="services-dropdown" t={t} />
+                  <ServicesDropdown key="services-dropdown" t={t} services={services} locale={locale} />
                 );
               }
 
@@ -127,9 +131,7 @@ export function Navigation() {
             onClick={switchLocale}
             className="flex cursor-pointer items-center gap-1.5 text-xl font-semibold text-light"
           >
-            <span className="text-base leading-none">
-              {LOCALE_FLAGS[locale]}
-            </span>
+            <LocaleFlag locale={locale} />
             <span>{LOCALE_LABELS[locale]}</span>
           </button>
 
@@ -187,14 +189,14 @@ export function Navigation() {
             <p className="py-3 text-base font-semibold uppercase tracking-wide text-white/70">
               {t("nav.services")}
             </p>
-            {SERVICE_ITEMS.map(({ key, slug }) => (
+            {services.map(({ name, slug }) => (
               <Link
                 key={slug}
                 href={`/services/${slug}`}
                 onClick={() => setMobileOpen(false)}
                 className="block py-2 text-sm text-white/70 transition-colors hover:text-white"
               >
-                {t(`services.${key}`)}
+                {name}
               </Link>
             ))}
           </div>
@@ -204,9 +206,7 @@ export function Navigation() {
               onClick={switchLocale}
               className="flex cursor-pointer items-center gap-1.5 font-semibold text-light"
             >
-              <span className="text-sm leading-none">
-                {LOCALE_FLAGS[locale]}
-              </span>
+              <LocaleFlag locale={locale} className="size-4" />
               <span>{LOCALE_LABELS[locale]}</span>
             </button>
 
@@ -225,14 +225,34 @@ export function Navigation() {
   );
 }
 
+function LocaleFlag({
+  locale,
+  className = "size-7",
+}: {
+  locale: Locale;
+  className?: string;
+}) {
+  return (
+    <Image
+      src={LOCALE_FLAGS[locale]}
+      alt=""
+      width={28}
+      height={28}
+      className={`shrink-0 object-cover ${className}`}
+      aria-hidden
+    />
+  );
+}
+
 function ServicesDropdown({
   t,
+  services,
+  locale,
 }: {
   t: ReturnType<typeof useTranslations<"common">>;
+  services: ServiceNavItem[];
+  locale: string;
 }) {
-  const params = useParams();
-  const locale = params.locale as Locale;
-
   return (
     <>
       <NavigationMenuItem>
@@ -240,13 +260,13 @@ function ServicesDropdown({
           {t("nav.services")}
         </NavigationMenuTrigger>
         <NavigationMenuContent className="grid w-[280px] gap-1 p-2">
-          {SERVICE_ITEMS.map(({ key, slug }) => (
+          {services.map(({ name, slug }) => (
             <NavigationMenuLink
               key={slug}
               href={`/${locale}/services/${slug}`}
               className="rounded-md px-3 py-2.5 text-sm font-medium text-light transition-colors hover:bg-white/10 focus:bg-white/10"
             >
-              {t(`services.${key}`)}
+              {name}
             </NavigationMenuLink>
           ))}
         </NavigationMenuContent>

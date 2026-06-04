@@ -8,10 +8,9 @@ import { Link } from "@/i18n/navigation";
 import "swiper/css";
 
 type ServiceItem = {
-  title: string;
+  name: string;
   slug: string;
-  image: string;
-  description: string;
+  featuredImage: string | null;
 };
 
 type ServicesSliderProps = {
@@ -38,16 +37,18 @@ export const ServicesSlider = ({ items }: ServicesSliderProps) => {
             href={`/services/${item.slug}`}
             className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
           >
+            {item.featuredImage && (
             <Image
-              src={item.image}
-              alt={item.title}
+              src={item.featuredImage}
+              alt={item.name}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 30vw"
             />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
             <span className="absolute bottom-5 left-5 text-lg font-semibold text-white">
-              {item.title}
+              {item.name}
             </span>
           </Link>
         </SwiperSlide>

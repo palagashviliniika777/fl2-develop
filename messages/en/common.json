@@ -8,22 +8,6 @@
     "blog": "Blog",
     "calculator": "Calculator"
   },
-  "services": {
-    "stretchedFloor": "Stretched floor",
-    "selfLevelingFloor": "Self-leveling floor",
-    "epoxyFloor": "Epoxy floor",
-    "vinylCovering": "Vinyl covering",
-    "terrazzoFloor": "Terrazzo floor",
-    "softFloorAndCarpet": "Soft floor & carpet"
-  },
-  "serviceDescriptions": {
-    "stretchedFloor": "Seamless stretch ceiling-style flooring for modern spaces",
-    "selfLevelingFloor": "Perfectly smooth, self-leveling floor solutions",
-    "epoxyFloor": "Durable, high-gloss epoxy coatings for any surface",
-    "vinylCovering": "Stylish and water-resistant vinyl floor coverings",
-    "terrazzoFloor": "Classic terrazzo flooring with a contemporary finish",
-    "softFloorAndCarpet": "Comfortable soft flooring and premium carpets"
-  },
   "actions": {
     "getQuote": "Get a quote",
     "learnMore": "Learn more",

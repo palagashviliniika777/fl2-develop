@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Calculator } from "@/components/sections/calculator/calculator";
+import { getAllServicesForCalculator } from "@/lib/sanity/queries/services";
+
+export const revalidate = 60;
 
 export async function generateMetadata({
   params,
@@ -18,14 +22,12 @@ export default async function CalculatorPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("calculator.hero");
+
+  const services = await getAllServicesForCalculator(locale);
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-24">
-      <h1 className="text-4xl font-semibold tracking-tight">{t("title")}</h1>
-      <p className="mt-4 max-w-prose text-lg text-zinc-600">
-        {t("description")}
-      </p>
+    <main className="pt-[90px] bg-light min-h-screen">
+      <Calculator services={services} />
     </main>
   );
 }

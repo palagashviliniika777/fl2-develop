@@ -1,17 +1,16 @@
 {
   "meta": {
     "title": "Calculator — FL2",
-    "description": "Estimate the cost of your project."
+    "description": "Accurately estimate your project budget with our simple and fast tool."
   },
-  "hero": {
-    "title": "Project calculator",
-    "description": "Answer a few questions to get an estimate."
-  },
-  "form": {
-    "submit": "Calculate",
-    "reset": "Reset"
-  },
-  "result": {
-    "title": "Estimated cost"
-  }
+  "title": "Flooring cost calculator",
+  "description": "Accurately determine your project budget with a simple and fast tool.",
+  "selectService": "Choose a service",
+  "areaLabel": "Area (m²)",
+  "areaPlaceholder": "e.g. 45",
+  "thicknessLabel": "Layer thickness (mm)",
+  "thicknessPlaceholder": "Choose desired thickness",
+  "calculate": "Calculate cost",
+  "disclaimer": "Please note that the figures provided by the calculator serve as approximate calculations. The exact cost estimate will be determined after an individual inspection of the object.",
+  "currency": "₾"
 }

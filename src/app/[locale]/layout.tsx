@@ -6,7 +6,7 @@ import { routing } from "@/i18n/routing";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
-import "../globals.css";
+import { getAllServicesNav } from "@/lib/sanity/queries/services";
 
 const isUnderConstruction =
   process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === "true";
@@ -45,16 +45,14 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
 
+  const services = isUnderConstruction ? [] : await getAllServicesNav(locale);
+
   return (
-    <html lang={locale}>
-      <body className="antialiased">
-        <NextIntlClientProvider>
-          {!isUnderConstruction && <Navigation />}
-          {children}
-          {!isUnderConstruction && <Footer />}
-          <Toaster />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider>
+      {!isUnderConstruction && <Navigation services={services} />}
+      {children}
+      {!isUnderConstruction && <Footer />}
+      <Toaster />
+    </NextIntlClientProvider>
   );
 }

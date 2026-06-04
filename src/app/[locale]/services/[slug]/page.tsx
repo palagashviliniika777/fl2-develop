@@ -1,33 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import { ContactForm } from "@/components/sections/contact";
 import { ServiceDetailBlock } from "@/components/sections/services/service-detail-block";
-import {
-  SERVICE_ITEMS,
-  SERVICE_PLACEHOLDER_IMAGE,
-} from "@/shared/constants";
+import { getServiceBySlug, getAllServiceSlugs } from "@/lib/sanity/queries/services";
 
-function slugToLabel(slug: string) {
-  return slug
-    .split("-")
-    .filter(Boolean)
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
+export const revalidate = 60;
 
-function serviceImages(slug: string): string[] {
-  return [
-    SERVICE_PLACEHOLDER_IMAGE,
-    `https://picsum.photos/seed/${slug}-2/630/447`,
-    `https://picsum.photos/seed/${slug}-3/630/447`,
-  ];
-}
-
-function serviceImages2(slug: string): string[] {
-  return [
-    SERVICE_PLACEHOLDER_IMAGE,
-  ];
+export async function generateStaticParams() {
+  const slugs = await getAllServiceSlugs();
+  return slugs.flatMap(({ slug }) =>
+    routing.locales.map((locale) => ({ locale, slug })),
+  );
 }
 
 export async function generateMetadata({
@@ -36,10 +21,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const t = await getTranslations({ locale, namespace: "services" });
+  const service = await getServiceBySlug(slug, locale);
+  if (!service) return {};
   return {
-    title: t("meta.pageTitle", { name: slugToLabel(slug) }),
-    description: t("meta.description"),
+    title: service.name ? `${service.name} — FL2` : "FL2",
   };
 }
 
@@ -51,31 +36,21 @@ export default async function ServiceDetailsPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const service = SERVICE_ITEMS.find((item) => item.slug === slug);
-  if (!service) {
-    notFound();
-  }
+  const service = await getServiceBySlug(slug, locale);
+  if (!service) notFound();
 
-  const tServices = await getTranslations("common.services");
-  const tDetailDesc = await getTranslations("services.details.descriptions");
   return (
     <main className="pt-[90px] flex flex-col md:gap-[100px] gap-10 my-20">
-      <ServiceDetailBlock
-        title={tServices(service.key)}
-        description={tDetailDesc(service.key)}
-        images={serviceImages(service.slug)}
-        direction="left"
-      />
-      <ServiceDetailBlock
-        description={tDetailDesc(service.key)}
-        images={serviceImages2(service.slug)}
-        direction="right"
-      />
-      <ServiceDetailBlock
-        description={tDetailDesc(service.key)}
-        direction="left"
-      />
-      <ContactForm serviceName={tServices(service.key)} />
+      {service.descriptionBlocks.map((block, i) => (
+        <ServiceDetailBlock
+          key={i}
+          title={i === 0 ? (service.name ?? undefined) : undefined}
+          description={block.text ?? ""}
+          images={block.images ?? []}
+          direction={i % 2 === 0 ? "left" : "right"}
+        />
+      ))}
+      <ContactForm serviceName={service.name ?? undefined} />
     </main>
   );
 }

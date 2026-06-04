@@ -1,5 +1,4 @@
 import type { StaticImageData } from "next/image";
-import { SERVICE_ITEMS } from "./navigation";
 import {
   FacebookLogo,
   InstagramLogo,
@@ -39,6 +38,6 @@ export const SOCIAL_LINKS: {
 
 export function getFooterHref(key: FooterNavKey) {
   if (key === "home") return "/";
-  if (key === "services") return `/services/${SERVICE_ITEMS[0].slug}`;
+  if (key === "services") return "/services";
   return `/${key}`;
 }

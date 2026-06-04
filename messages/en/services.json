@@ -1,22 +1,6 @@
 {
   "meta": {
     "title": "Service — FL2",
-    "description": "Service details.",
-    "pageTitle": "{name} — FL2"
-  },
-  "details": {
-    "overview": "Overview",
-    "process": "Our process",
-    "pricing": "Pricing",
-    "ctaTitle": "Ready to start?",
-    "ctaDescription": "Tell us about your project.",
-    "descriptions": {
-      "stretchedFloor": "The durability of any floor covering depends on what lies beneath it. We ensure a perfectly level, structurally sound base built to engineering standards, so your finish performs for decades without warping or separation. Proper preparation is the guarantee that your investment stays protected from deformation, moisture, and everyday wear.",
-      "selfLevelingFloor": "A flawless self-leveling floor starts with understanding the existing substrate. We assess moisture, cracks, and load requirements before choosing the right compound and application method. That foundation is what makes the difference between a surface that looks good on day one and one that still performs years later.",
-      "epoxyFloor": "Epoxy flooring is valued for its strength, chemical resistance, and high-gloss appearance, but those benefits only appear when the slab is prepared correctly. We grind, repair, and prime surfaces so the coating bonds fully and cures without defects. Skipping this stage is the most common reason epoxy systems fail prematurely.",
-      "vinylCovering": "Vinyl coverings offer flexibility, water resistance, and a wide range of designs, yet they still depend on a stable, dry, and flat subfloor. We prepare substrates carefully so planks and sheets lay flat without telegraphing imperfections.",
-      "terrazzoFloor": "Terrazzo brings timeless character to interiors, but modern installations demand precision in mixing, pouring, and polishing. We work with both traditional cement-based systems and contemporary resin terrazzo to achieve the depth of colour and finish your design requires.",
-      "softFloorAndCarpet": "Comfort underfoot begins with the right subfloor preparation and underlay selection. We check moisture levels, smooth transitions, and fixing methods before carpet or soft flooring goes down, preventing ripples, premature wear, and odour issues."
-    }
+    "description": "Service details."
   }
 }

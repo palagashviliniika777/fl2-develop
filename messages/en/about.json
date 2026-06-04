@@ -2,35 +2,5 @@
   "meta": {
     "title": "About — FL2",
     "description": "Learn more about FL2."
-  },
-  "hero": {
-    "title": "About us",
-    "description": "Who we are and what we believe in."
-  },
-  "story": {
-    "title": "Our story"
-  },
-  "values": {
-    "title": "Our values"
-  },
-  "info": {
-    "heading": "About us",
-    "subtitle": "Professional flooring solutions with an uncompromising eye for quality",
-    "body": "With years of professional experience and a trusted approach, FL2 has established the highest quality control standards, allowing us to complete projects of any complexity within deadlines. Our team is focused on the synthesis of innovative materials and high-tech approaches to deliver results that stand the test of time.",
-    "principlesHeading": "Our main principles are:",
-    "principles": {
-      "authority": {
-        "title": "Authority",
-        "description": "We bring deep expertise and a proven track record to every project, earning the trust of our clients through consistent, high-quality results."
-      },
-      "efficiency": {
-        "title": "Efficiency",
-        "description": "We respect your time. Every project is planned and executed to meet agreed deadlines without compromising on the standard of workmanship."
-      },
-      "quality": {
-        "title": "Premium Quality",
-        "description": "We use only certified materials and rigorous installation methods, ensuring every floor we deliver performs beautifully for years to come."
-      }
-    }
   }
 }

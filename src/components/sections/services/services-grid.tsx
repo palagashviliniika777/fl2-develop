@@ -6,10 +6,10 @@ import { Link } from "@/i18n/navigation";
 import { ChevronUp } from "lucide-react";
 
 type ServiceItem = {
-  title: string;
+  name: string;
   slug: string;
-  image: string;
-  description: string;
+  shortDescription: string | null;
+  featuredImage: string | null;
 };
 
 type ServicesGridProps = {
@@ -42,22 +42,26 @@ export const ServicesGrid = ({ items, viewAllLabel }: ServicesGridProps) => {
             href={`/services/${item.slug}`}
             className="group flex items-center rounded-[10px] bg-transparent border border-brown/30 transition-colors"
           >
-            <div className="relative h-20 w-20 shrink-0 overflow-hidden max-lg:rounded-[10px] lg:rounded-l-[10px]">
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover"
-                sizes="80px"
-              />
-            </div>
+            {item.featuredImage && (
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden max-lg:rounded-[10px] lg:rounded-l-[10px]">
+                <Image
+                  src={item.featuredImage}
+                  alt={item.name}
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                />
+              </div>
+            )}
             <div className="h-full py-2 rounded-r-[8px] px-4 group-hover:bg-brown duration-300">
               <span className="text-base font-bold text-text group-hover:text-white duration-300">
-                {item.title}
+                {item.name}
               </span>
-              <p className="mt-0.5 text-xs text-text/60 line-clamp-2 group-hover:text-white duration-300">
-                {item.description}
-              </p>
+              {item.shortDescription && (
+                <p className="mt-0.5 text-xs text-text/60 line-clamp-2 group-hover:text-white duration-300">
+                  {item.shortDescription}
+                </p>
+              )}
             </div>
           </Link>
         ))}

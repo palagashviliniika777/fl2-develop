@@ -1,32 +1,39 @@
-import { getTranslations } from "next-intl/server";
 import { TestimonialsSlider } from "./testimonials-slider";
-import { TESTIMONIALS } from "@/shared/constants";
+import type { LandingTestimonials } from "@/shared/types/landing";
 
-export async function Testimonials() {
-  const t = await getTranslations("landing.testimonials");
+type TestimonialsProps = {
+  data: LandingTestimonials | null;
+};
 
-  const items = TESTIMONIALS.map((testimonial) => ({
-    quote: t(`items.${testimonial.key}.quote`),
-    name: t(`items.${testimonial.key}.name`),
-    role: t(`items.${testimonial.key}.role`),
-    rating: testimonial.rating,
-    image: testimonial.image,
+export function Testimonials({ data }: TestimonialsProps) {
+  const items = (data?.items ?? []).map((item) => ({
+    quote: item.quote ?? "",
+    name: item.name ?? "",
+    role: item.role ?? "",
+    rating: item.rating,
+    image: item.image ?? "",
   }));
 
   return (
     <section className="mb-10 lg:mb-[134px] overflow-hidden py-[20px] lg:py-20">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-20">
-        <h2 className="text-left text-xl font-bold uppercase tracking-wide text-text lg:text-center lg:text-[32px]">
-          {t("title")}
-        </h2>
-        <p className="mt-4 max-w-3xl text-left text-base leading-relaxed text-text/70 lg:mx-auto lg:mt-6 lg:text-center">
-          {t("description")}
-        </p>
+        {data?.title && (
+          <h2 className="text-left text-xl font-bold uppercase tracking-wide text-text lg:text-center lg:text-[32px]">
+            {data.title}
+          </h2>
+        )}
+        {data?.description && (
+          <p className="mt-4 max-w-3xl text-left text-base leading-relaxed text-text/70 lg:mx-auto lg:mt-6 lg:text-center">
+            {data.description}
+          </p>
+        )}
       </div>
 
-      <div className="mt-10 w-full px-6 lg:mt-14 lg:px-0">
-        <TestimonialsSlider items={items} />
-      </div>
+      {items.length > 0 && (
+        <div className="mt-10 w-full px-6 lg:mt-14 lg:px-0">
+          <TestimonialsSlider items={items} />
+        </div>
+      )}
     </section>
   );
 }

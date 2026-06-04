@@ -3,67 +3,9 @@
     "title": "FL2 — Home",
     "description": "Welcome to FL2."
   },
-  "hero": {
-    "eyebrow": "Welcome",
-    "title": "Build something great with us",
-    "description": "Hero description goes here."
-  },
   "services": {
     "title": "Services",
     "description": "Discover services that will give your interior a perfect look. We pay attention to every detail so you get a durable and universally refined floor.",
     "viewAll": "All services"
-  },
-  "about": {
-    "title": "About us",
-    "description": "With years of professional experience and a trusted approach, FL2 has established the highest quality control standards, allowing us to complete projects of any complexity within deadlines. Our team is focused on the synthesis of innovative materials and high-tech approaches...",
-    "cta": "Learn more"
-  },
-  "faq": {
-    "title": "Frequently asked questions",
-    "description": "Learn the details about the floor installation and finishing process.",
-    "items": {
-      "q1": {
-        "question": "How long does it take for the floor to fully dry?",
-        "answer": "Drying time depends on the material type and environmental conditions. Typically, epoxy floors need 24-48 hours, while self-leveling floors require 3-7 days."
-      },
-      "q2": {
-        "question": "Is it possible to lay new covering on an old floor?",
-        "answer": "Yes, in many cases it is possible to lay new covering on an old floor if the surface is level and solid. Our specialists will assess the condition on-site."
-      },
-      "q3": {
-        "question": "Why is professional leveling necessary?",
-        "answer": "Professional leveling ensures an even surface, which is essential for the long life of the covering. Improper leveling causes cracks and premature wear."
-      },
-      "q4": {
-        "question": "What are your warranty terms and service conditions?",
-        "answer": "We offer a 2-5 year warranty on completed work, depending on the material type. Any defects during the warranty period are fixed free of charge."
-      }
-    }
-  },
-  "testimonials": {
-    "title": "What our clients say",
-    "description": "Hear from our satisfied clients about their experience working with us.",
-    "items": {
-      "t1": {
-        "quote": "The FL2 team completed our office floor installation on time and with exceptional quality. The result exceeded our expectations.",
-        "name": "Giorgi Beridze",
-        "role": "Office Manager"
-      },
-      "t2": {
-        "quote": "Their professional approach and attention to detail stood out. I recommend them to anyone looking for quality flooring.",
-        "name": "Nino Kvaratskhelia",
-        "role": "Interior Designer"
-      },
-      "t3": {
-        "quote": "Renovating our home floor was a complex project, but FL2 handled everything smoothly and professionally.",
-        "name": "Davit Meladze",
-        "role": "Residential Client"
-      },
-      "t4": {
-        "quote": "The epoxy floor installation turned out perfectly. The team was ready to answer every question along the way.",
-        "name": "Mariam Chikhladze",
-        "role": "Restaurant Owner"
-      }
-    }
   }
 }

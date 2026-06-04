@@ -12,12 +12,15 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-import { ABOUT_SLIDER_IMAGES } from "@/shared/constants";
 import "swiper/css";
 
 const LG_QUERY = "(min-width: 1024px)";
 
-export const AboutSlider = () => {
+type AboutSliderProps = {
+  images: string[];
+};
+
+export const AboutSlider = ({ images }: AboutSliderProps) => {
   const swiperRef = useRef<SwiperClass | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLg, setIsLg] = useState(false);
@@ -48,12 +51,12 @@ export const AboutSlider = () => {
         spaceBetween={16}
         className="!w-full min-h-0 lg:min-h-0 lg:flex-1 lg:!h-full"
       >
-        {ABOUT_SLIDER_IMAGES.map((src, i) => (
+        {images.map((src, i) => (
           <SwiperSlide
             key={i}
-            className="overflow-hidden rounded-2xl max-lg:!h-auto min-h-0"
+            className="overflow-hidden rounded-2xl"
           >
-            <div className="relative aspect-[4/3] w-full min-h-0 overflow-hidden rounded-2xl lg:aspect-auto lg:h-full">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl lg:aspect-auto lg:absolute lg:inset-0">
               <Image
                 src={src}
                 alt=""
@@ -85,7 +88,7 @@ export const AboutSlider = () => {
         </button>
 
         <div className="flex flex-row items-center gap-1.5 lg:flex-col">
-          {ABOUT_SLIDER_IMAGES.map((_, i) => (
+          {images.map((_, i) => (
             <button
               key={i}
               type="button"

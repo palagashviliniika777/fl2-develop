@@ -8,22 +8,6 @@
     "blog": "ბლოგი",
     "calculator": "კალკულატორი"
   },
-  "services": {
-    "stretchedFloor": "მოჭიმული იატაკი",
-    "selfLevelingFloor": "თვითსწორებადი იატაკი",
-    "epoxyFloor": "ეპოქსიდური იატაკი",
-    "vinylCovering": "ვინილის საფარი",
-    "terrazzoFloor": "ტერაცოს იატაკი",
-    "softFloorAndCarpet": "რბილი იატაკი და ხალიჩა"
-  },
-  "serviceDescriptions": {
-    "stretchedFloor": "თანამედროვე სივრცეებისთვის უნაკერო მოჭიმული იატაკი",
-    "selfLevelingFloor": "სრულყოფილად გლუვი, თვითსწორებადი იატაკის გადაწყვეტა",
-    "epoxyFloor": "გამძლე, მაღალი ბზინვარების ეპოქსიდური საფარი",
-    "vinylCovering": "სტილური და წყალგამძლე ვინილის იატაკის საფარი",
-    "terrazzoFloor": "კლასიკური ტერაცოს იატაკი თანამედროვე დამუშავებით",
-    "softFloorAndCarpet": "კომფორტული რბილი იატაკი და პრემიუმ ხალიჩები"
-  },
   "actions": {
     "getQuote": "ფასის გაგება",
     "learnMore": "გაიგე მეტი",

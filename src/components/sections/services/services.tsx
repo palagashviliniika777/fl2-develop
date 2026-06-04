@@ -1,36 +1,34 @@
-import { getTranslations } from "next-intl/server";
-import { SERVICE_ITEMS, SERVICE_PLACEHOLDER_IMAGE } from "@/shared/constants";
 import { ServicesSlider } from "./services-slider";
 import { ServicesGrid } from "./services-grid";
+import type { LandingServicesSection } from "@/shared/types/landing";
+import type { ServiceListItem } from "@/shared/types/service";
 
-export async function Services() {
-  const t = await getTranslations("landing.services");
-  const tCommon = await getTranslations("common.services");
+type ServicesProps = {
+  section: LandingServicesSection | null;
+  items: ServiceListItem[];
+  viewAllLabel: string;
+};
 
-  const tDesc = await getTranslations("common.serviceDescriptions");
-
-  const items = SERVICE_ITEMS.map((service) => ({
-    title: tCommon(service.key),
-    description: tDesc(service.key),
-    slug: service.slug,
-    image: SERVICE_PLACEHOLDER_IMAGE,
-  }));
-
+export function Services({ section, items, viewAllLabel }: ServicesProps) {
   return (
     <section className="mt-10 mb-14 overflow-hidden border border-brown/30">
       <div className="mx-auto max-w-[1440px] px-6 py-[20px] lg:px-20 lg:py-20">
-        <h2 className="text-left text-xl font-bold uppercase tracking-wide text-text lg:text-center lg:text-[32px]">
-          {t("title")}
-        </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-left text-base leading-relaxed text-text/70 lg:mx-auto lg:mt-6 lg:text-center">
-          {t("description")}
-        </p>
+        {section?.title && (
+          <h2 className="text-left text-xl font-bold uppercase tracking-wide text-text lg:text-center lg:text-[32px]">
+            {section.title}
+          </h2>
+        )}
+        {section?.description && (
+          <p className="mx-auto mt-4 max-w-3xl text-left text-base leading-relaxed text-text/70 lg:mx-auto lg:mt-6 lg:text-center">
+            {section.description}
+          </p>
+        )}
 
         <div className="mt-10 lg:mt-14">
           <ServicesSlider items={items} />
         </div>
 
-        <ServicesGrid items={items} viewAllLabel={t("viewAll")} />
+        <ServicesGrid items={items} viewAllLabel={section?.cta ?? viewAllLabel} />
       </div>
     </section>
   );

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { AboutHeroSlider, AboutInfo } from "@/components/sections/about";
+import { getAboutPage } from "@/lib/sanity/queries/about";
+
+export const revalidate = 60;
 
 export async function generateMetadata({
   params,
@@ -20,10 +23,12 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const about = await getAboutPage(locale);
+
   return (
     <main>
-      <AboutHeroSlider />
-      <AboutInfo />
+      <AboutHeroSlider images={about?.heroImages ?? []} />
+      <AboutInfo data={about?.info ?? null} />
     </main>
   );
 }
