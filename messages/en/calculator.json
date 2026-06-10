@@ -6,11 +6,19 @@
   "title": "Flooring cost calculator",
   "description": "Accurately determine your project budget with a simple and fast tool.",
   "selectService": "Choose a service",
-  "areaLabel": "Area (m²)",
+  "areaLabel": "Area",
+  "areaSubtitle": "Choose the desired numbers",
   "areaPlaceholder": "e.g. 45",
-  "thicknessLabel": "Layer thickness (mm)",
+  "thicknessLabel": "Choose thickness",
   "thicknessPlaceholder": "Choose desired thickness",
   "calculate": "Calculate cost",
   "disclaimer": "Please note that the figures provided by the calculator serve as approximate calculations. The exact cost estimate will be determined after an individual inspection of the object.",
-  "currency": "₾"
+  "currency": "₾",
+  "sqmAbbrev": "m²",
+  "unitPriceLabel": "Unit price",
+  "perSqm": "per m²",
+  "totalAreaLabel": "Total area",
+  "totalCostLabel": "Total cost",
+  "consultPrompt": "Contact us for a free consultation.",
+  "freeConsultation": "Free consultation"
 }

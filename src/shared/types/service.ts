@@ -5,6 +5,7 @@ export type ServiceNavItem = {
 
 export type ThicknessOption = {
   label: string;
+  description: string | null;
   price: number;
 };
 

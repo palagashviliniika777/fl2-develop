@@ -45,6 +45,7 @@ const ALL_SERVICES_CALCULATOR_QUERY = `
     pricePerSqm,
     "thicknessOptions": thicknessOptions[]{
       "label": label[$locale],
+      "description": description[$locale],
       price,
     },
   }

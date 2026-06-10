@@ -54,8 +54,15 @@ export const service = defineType({
             defineField({
               name: "label",
               title: "Label",
+              description: "Thickness range shown on the card, e.g. 1-3mm.",
               type: "localizedString",
               validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "description",
+              title: "Description",
+              description: "Optional subtitle shown below the label, e.g. Standard.",
+              type: "localizedString",
             }),
             defineField({
               name: "price",
