@@ -16,6 +16,14 @@ type CalculatorProps = {
   services: ServiceCalculatorItem[];
 };
 
+function getDefaultThicknessIndex(
+  service: ServiceCalculatorItem | undefined,
+): number | null {
+  const options = service?.thicknessOptions;
+  if (!options?.length) return null;
+  return 0;
+}
+
 export function Calculator({ services }: CalculatorProps) {
   const t = useTranslations("calculator");
 
@@ -23,7 +31,9 @@ export function Calculator({ services }: CalculatorProps) {
     services[0]?.slug ?? null,
   );
   const [area, setArea] = useState(100);
-  const [selectedThicknessIndex, setSelectedThicknessIndex] = useState<number | null>(null);
+  const [selectedThicknessIndex, setSelectedThicknessIndex] = useState<number | null>(
+    () => getDefaultThicknessIndex(services[0]),
+  );
 
   const selectedService = services.find((s) => s.slug === selectedSlug);
   const thicknessOptions = selectedService?.thicknessOptions ?? null;
@@ -48,8 +58,9 @@ export function Calculator({ services }: CalculatorProps) {
   }, [selectedService, area, selectedThicknessIndex, hasThickness, thicknessOptions]);
 
   function handleServiceSelect(slug: string) {
+    const service = services.find((s) => s.slug === slug);
     setSelectedSlug(slug);
-    setSelectedThicknessIndex(null);
+    setSelectedThicknessIndex(getDefaultThicknessIndex(service));
   }
 
   function handleAreaChange(val: number) {
