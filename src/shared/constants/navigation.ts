@@ -2,7 +2,6 @@ import type { Locale } from "@/i18n/routing";
 export const NAV_LINKS = [
   { key: "home", href: "/" },
   { key: "about", href: "/about" },
-  { key: "blog", href: "/blog" },
   { key: "contact", href: "/contact" },
 ] as const;
 

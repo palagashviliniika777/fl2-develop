@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Calculator } from "@/components/sections/calculator/calculator";
 import { getAllServicesForCalculator } from "@/lib/sanity/queries/services";
+import { SHOW_CALCULATOR } from "@/shared/constants/features";
 
 export const revalidate = 60;
 
@@ -22,6 +24,10 @@ export default async function CalculatorPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (!SHOW_CALCULATOR) {
+    notFound();
+  }
 
   const services = await getAllServicesForCalculator(locale);
 

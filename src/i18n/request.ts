@@ -9,6 +9,7 @@ const NAMESPACES = [
   "about",
   "contact",
   "calculator",
+  "not-found",
 ] as const;
 
 async function loadMessages(locale: Locale) {

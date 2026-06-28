@@ -12,6 +12,7 @@ import {
   LOCALE_FLAGS,
   TRANSPARENT_NAV_ROUTES,
 } from "@/shared/constants/navigation";
+import { SHOW_CALCULATOR } from "@/shared/constants/features";
 import { useLockBodyScroll, useOutsideClick } from "@/shared/hooks";
 import {
   NavigationMenu,
@@ -135,12 +136,14 @@ export function Navigation({ services }: NavigationProps) {
             <span>{LOCALE_LABELS[locale]}</span>
           </button>
 
-          <Link
-            href="/calculator"
-            className="rounded-full border border-white bg-white/15 px-10 py-2.5 text-base font-semibold text-light backdrop-blur-[25px] transition-colors hover:bg-white/25"
-          >
-            {t("nav.calculator")}
-          </Link>
+          {SHOW_CALCULATOR && (
+            <Link
+              href="/calculator"
+              className="rounded-full border border-white bg-white/15 px-10 py-2.5 text-base font-semibold text-light backdrop-blur-[25px] transition-colors hover:bg-white/25"
+            >
+              {t("nav.calculator")}
+            </Link>
+          )}
         </div>
 
         {/* Mobile hamburger */}
@@ -210,13 +213,15 @@ export function Navigation({ services }: NavigationProps) {
               <span>{LOCALE_LABELS[locale]}</span>
             </button>
 
-            <Link
-              href="/calculator"
-              onClick={() => setMobileOpen(false)}
-              className="rounded-full border border-white bg-white/15 px-6 py-2 text-sm font-semibold text-light backdrop-blur-[25px]"
-            >
-              {t("nav.calculator")}
-            </Link>
+            {SHOW_CALCULATOR && (
+              <Link
+                href="/calculator"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-full border border-white bg-white/15 px-6 py-2 text-sm font-semibold text-light backdrop-blur-[25px]"
+              >
+                {t("nav.calculator")}
+              </Link>
+            )}
           </div>
         </nav>
       </div>

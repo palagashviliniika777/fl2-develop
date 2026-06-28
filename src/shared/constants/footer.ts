@@ -12,7 +12,6 @@ export const FOOTER_NAV_KEYS = [
   "services",
   "about",
   "contact",
-  "blog",
 ] as const;
 
 export type FooterNavKey = (typeof FOOTER_NAV_KEYS)[number];
